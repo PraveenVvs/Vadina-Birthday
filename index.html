@@ -24,10 +24,10 @@
 
 <body style="background-color:#FFDAB9;font-family: 'Signika', sans-serif;text-shadow: 5px 5px 5px #FFF;">
     <div>
-        <form action="index.html">
+        <form onsubmit ="return verifyPassword()" action="index.html">
             <label for="psw">Password</label>
 
-            <input type="password" name="password" id="pwd" placeholder="Enter the password">
+            <input type="password"  id="pwd" placeholder="Enter the password">
             <i class="far fa-eye" id="togglePassword"></i>
 
             <br>
@@ -42,10 +42,19 @@
 <script>
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#pwd');
-    var myInput = document.getElementById("pwd");
-    if (myInput != "Naveen My Love") {
+    var pass=document.getElementById("pwd");
+        function verifyPassword() {  
+        if (pass.value != "Naveen My Love") {
         alert("No cheating Enter correct Password");
+        return false;
     }
+    else
+    {
+        return true;
+    }
+
+  }  
+    
     togglePassword.addEventListener('click', function (e) {
         // toggle the type attribute
         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
