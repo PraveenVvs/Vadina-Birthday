@@ -1,34 +1,56 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
-   <style>
+    <style>
         div {
             text-align: center;
-        top: 50%;
-        left: 50%;
-   }
-   </style>
-  
+            top: 50%;
+            left: 50%;
+        }
+
+        .container i {
+            margin-left: -30px;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
+
 <body style="background-color:#FFDAB9;font-family: 'Signika', sans-serif;text-shadow: 5px 5px 5px #FFF;">
     <div>
         <form action="index.html">
             <label for="psw">Password</label>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
+
+            <input type="password" name="password" id="pwd" placeholder="Enter the password">
+            <i class="far fa-eye" id="togglePassword"></i>
+
+            <br>
+            <input type="submit" value="Submit">
         </form>
     </div>
-    
-    
+
+
 </body>
+
 </html>
 <script>
-    var myInput = document.getElementById("psw");
-    if(myInput!="Naveen My Love")
-    {
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#pwd');
+    var myInput = document.getElementById("pwd");
+    if (myInput != "Naveen My Love") {
         alert("No cheating Enter correct Password");
     }
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
 </script>
