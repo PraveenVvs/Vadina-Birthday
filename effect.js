@@ -21,6 +21,7 @@ $('document').ready(function(){
 		});
 
 	$('#turn_on').click(function(){
+		document.getElementById("song1").play();
 		$('#bulb_yellow').addClass('bulb-glow-yellow');
 		$('#bulb_red').addClass('bulb-glow-red');
 		$('#bulb_blue').addClass('bulb-glow-blue');
@@ -50,6 +51,7 @@ $('document').ready(function(){
 	});
 
 	$('#bannar_coming').click(function(){
+		document.getElementById("song1").play();
 		$('.bannar').addClass('bannar-come');
 		$(this).fadeOut('slow').delay(6000).promise().done(function(){
 			$('#balloons_flying').fadeIn('slow');
