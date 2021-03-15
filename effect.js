@@ -2,6 +2,8 @@ $(window).load(function(){
 	$('.loading').fadeOut('fast');
 	$('.container').fadeIn('fast');
 });
+var xyz=document.getElementById("song1");
+xyz.loop=false;
 $('document').ready(function(){
 		var vw;
 		$(window).resize(function(){
@@ -31,6 +33,7 @@ $('document').ready(function(){
 		});
 	});
 	$('#play').click(function(){
+		document.getElementById("song1").play();
 		var audio = $('.song')[0];
         audio.play();
         $('#bulb_yellow').addClass('bulb-glow-yellow-after');
@@ -119,6 +122,7 @@ $('document').ready(function(){
 	}
 
 	$('#balloons_flying').click(function(){
+		document.getElementById("song1").play();
 		$('.balloon-border').animate({top:-500},8000);
 		$('#b1,#b4,#b5,#b7,#b9').addClass('balloons-rotate-behaviour-one');
 		$('#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
@@ -143,6 +147,7 @@ $('document').ready(function(){
 	});	
 
 	$('#cake_fadein').click(function(){
+		document.getElementById("song1").play();
 		$('.cake').fadeIn('slow');
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow');
@@ -150,6 +155,7 @@ $('document').ready(function(){
 	});
 
 	$('#light_candle').click(function(){
+		document.getElementById("song1").play();
 		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function(){
 			$('#wish_message').fadeIn('slow');
@@ -158,6 +164,7 @@ $('document').ready(function(){
 
 		
 	$('#wish_message').click(function(){
+		document.getElementById("song1").play();
 		 vw = $(window).width()/2;
 
 		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').stop();
@@ -188,6 +195,7 @@ $('document').ready(function(){
 	});
 	
 	$('#story').click(function(){
+		document.getElementById("song1").play();
 		$(this).fadeOut('slow');
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
